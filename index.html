@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en" >
+  <head>
+    <script>
+      document.documentElement.setAttribute('data-bs-theme', window.localStorage.getItem('theme'))
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Clement  </title>
+    <link rel="icon" href="weather.svg" sizes = "64x32" type="image/icon type">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </svg>
+   
+    <style>
+      .mystyle{
+        background-color: black;
+        color:white;
+      }
+     
+    </style>
+  </head>
+  <body  >
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Clement</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About this App</a>
+              </li>
+            
+              
+            </ul>
+            <div class="nav-item">
+              <i class="fa fa-moon-o mx-3"  onclick="func()" style="font-size: 26px;"></i>
+            </div>
+           
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" id="city"  type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-primary" type="submit" id="final">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <h1 class="text-center">Weather for <span id="cityName"></span></h1>
+        <main>
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                  <div class="card-header py-3">
+                    <h4 class="my-0 fw-normal">Temperature</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><small class="text-muted fw-light"> <span id="temp2"></span>
+                        <span>&#8451;</span></small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>Temperature is <span id="temp"></span></li>
+                      <li>Minimum Temperature is  <span id="min_temp"></span></li>
+                      <li>Maximum Temperature is <span id="max_temp"></span></li>
+                     
+                    </ul>
+                 
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                  <div class="card-header py-3">
+                    <h4 class="my-0 fw-normal">Humidity</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><small class="text-muted fw-light"><span id="humidity2"></span>
+                        %</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>Humidity is <span id="humidity"></span></li>
+                      <li>Feels like <span id="feels_like"></span> </li>
+                      <li>Sunrise at <span id="sunrise"></span></li>
+                     
+                    </ul>
+                  
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm border">
+                  <div class="card-header py-3 border">
+                    <h4 class="my-0 fw-normal">Windspeed</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><small class="text-muted fw-light"><span id="wind_speed2"></span> km/hr</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>Wind degrees is <span id="wind_degrees"></span></li>
+                      <li>Sunrise at <span id="wind_speed"></span></li>
+                      <li>Sunset at <span id="sunset"></span></li>
+                    
+                    </ul>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+            <h2 class="display-6 text-center mb-4">Temperatures of some cities</h2>
+          <!--table--->
+            <div class="table-responsive" >
+              <table class="table text-center">
+                <thead>
+                  <tr >
+                    <th style="width: 10%;"></th>
+                  
+                    <th style="width: 10%;">Feels_like</th>
+                    <th style="width: 10%;">Humidity</th>
+                    <th style="width: 10%;">Max_temp</th>
+                    <th style="width: 10%;">Min_temp</th>
+                    <th style="width: 10%;">Sunrise</th>
+                    <th style="width: 10%;">Sunset</th>
+                    <th style="width: 10%;">Temp</th>
+                    <th style="width: 10%;">Wind_degrees</th>
+                    <th style="width: 15%;">Wind_speed</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                   
+                    <th scope="row" class="text-start"  >Shangai</th>
+                   <td><span id="feels_like1"></span></td>
+                   <td><span id="hum1"> %</span></td>
+                   <td><span id="mx_temp1"><span>&#8451;</span></span></td>
+                   <td><span id="mn_temp1"><span>&#8451;</span></span></td>
+                   <td><span id="srise1"></span></td>
+                   <td><span id="sset1"></span></td>
+                   <td><span id="temper1"><span>&#8451;</span></span></td>
+                   <td><span id="wd1"></span></td>
+                   <td><span id="ws1"></span></td>
+                
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-start" >Boston</th>
+                    <td><span id="feels_like2"></span></td>
+                    <td><span id="hum2"> %</span></td>
+                    <td><span id="mx_temp2"><span>&#8451;</span></span></td>
+                    <td><span id="mn_temp2"><span>&#8451;</span></span></td>
+                    <td><span id="srise2"></span></td>
+                    <td><span id="sset2"></span></td>
+                    <td><span id="temper2"><span>&#8451;</span></span></td>
+                    <td><span id="wd2"></span></td>
+                    <td><span id="ws2"></span></td>
+                 
+                  </tr>
+                </tbody>
+        
+                <tbody>
+                  <tr>
+                    <th scope="row" class="text-start">Lucknow</th>
+                   
+                    <td><span id="feels_like3"> </span></td>
+                    <td><span id="hum3"> %</span></td>
+                    <td><span id="mx_temp3"><span>&#8451;</span></span></td>
+                    <td><span id="mn_temp3"><span>&#8451;</span></span></td>
+                    <td><span id="srise3"></span></td>
+                    <td><span id="sset3"></span></td>
+                    <td><span id="temper3"><span>&#8451;</span></span></td>
+                    <td><span id="wd3"></span></td>
+                    <td><span id="ws3"></span></td>
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-start">Kolkata</th>
+                    <td><span id="feels_like4"></span></td>
+                    <td><span id="hum4"> %</span></td>
+                    <td><span id="mx_temp4"><span>&#8451;</span></span></td>
+                    <td><span id="mn_temp4"><span>&#8451;</span></span></td>
+                    <td><span id="srise4"></span></td>
+                    <td><span id="sset4"></span></td>
+                    <td><span id="temper4"><span>&#8451;</span></span></td>
+                    <td><span id="wd4"></span></td>
+                    <td><span id="ws4"></span></td>
+                  
+                  </tr>
+                 
+                </tbody>
+              </table>
+            </div>
+          </main>
+      </div>
+      <script src="script.js"></script>
+      <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
+</html>
